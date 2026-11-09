@@ -3,7 +3,7 @@
 window.T = {
   pt: {
     "nav.about": "Sobre", "nav.system": "Sistemas", "nav.projects": "Projetos", "nav.experience": "Experiência", "nav.ask": "Pergunte", "nav.contact": "Contato",
-    "hero.status": "Disponível · remoto e híbrido · CLT ou PJ",
+    "hero.status": "Disponível para novas oportunidades",
     "hero.lead": "Engenheiro de Software Sênior. Projeto, construo e opero <strong>sistemas em produção de ponta a ponta</strong>, da arquitetura ao deploy.",
     "hero.k1": "Função", "hero.v1": "Full Stack · Tech Lead · Arquitetura",
     "hero.k2": "Base", "hero.v2": "Angular · .NET · Node.js · TypeScript",
@@ -42,7 +42,7 @@ window.T = {
     "ask.ph": "Ex.: Você já liderou times? Trabalha com Azure?",
     "ask.send": "Perguntar",
     "ask.hello": "Olá! Sou um assistente com base no currículo do Pedro. Escolha uma pergunta abaixo ou escreva a sua.",
-    "ask.suggest": ["Qual é sua stack principal?", "Já liderou times?", "Tem experiência com IA?", "Qual modelo de trabalho você aceita?", "Conte sobre o app de eventos", "Por que contratar você?"],
+    "ask.suggest": ["Qual é sua stack principal?", "Já liderou times?", "Tem experiência com IA?", "Já desenvolveu app mobile?", "Conte sobre o app de eventos", "Por que contratar você?"],
     "ask.you": "Você", "ask.bot": "Pedro.AI",
     "ask.note": "As respostas vêm de uma base escrita a partir do meu currículo. Para algo mais específico, fale comigo direto.",
     "contact.k": "Próximo passo", "contact.l1": "Vamos", "contact.l2": "construir.",
@@ -51,7 +51,7 @@ window.T = {
   },
   en: {
     "nav.about": "About", "nav.system": "Systems", "nav.projects": "Projects", "nav.experience": "Experience", "nav.ask": "Ask", "nav.contact": "Contact",
-    "hero.status": "Available · remote and hybrid",
+    "hero.status": "Open to new opportunities",
     "hero.lead": "Senior Software Engineer. I design, build and run <strong>production systems end to end</strong>, from architecture to deployment.",
     "hero.k1": "Role", "hero.v1": "Full Stack · Tech Lead · Architecture",
     "hero.k2": "Core", "hero.v2": "Angular · .NET · Node.js · TypeScript",
@@ -90,7 +90,7 @@ window.T = {
     "ask.ph": "E.g.: Have you led teams? Do you work with Azure?",
     "ask.send": "Ask",
     "ask.hello": "Hi! I'm an assistant based on Pedro's résumé. Pick a question below or type your own.",
-    "ask.suggest": ["What is your main stack?", "Have you led teams?", "Do you have AI experience?", "What work model do you accept?", "Tell me about the events app", "Why should we hire you?"],
+    "ask.suggest": ["What is your main stack?", "Have you led teams?", "Do you have AI experience?", "Have you built mobile apps?", "Tell me about the events app", "Why should we hire you?"],
     "ask.you": "You", "ask.bot": "Pedro.AI",
     "ask.note": "Answers come from a knowledge base written from my résumé. For anything more specific, reach out directly.",
     "contact.k": "Next step", "contact.l1": "Let's", "contact.l2": "build.",
@@ -324,8 +324,8 @@ window.QA = [
   },
   {
     k: ["remoto", "hibrido", "presencial", "modelo", "clt", "pj", "contrato", "regime", "remote", "hybrid", "onsite", "contract", "work model"],
-    pt: "Busco oportunidades remotas ou híbridas, em CLT ou PJ. Para o híbrido, atendo São Paulo capital e São José dos Campos sem problema de deslocamento.",
-    en: "I'm looking for remote or hybrid opportunities, as an employee or contractor. For hybrid roles, I can commute to São Paulo and São José dos Campos without issue."
+    pt: "Prefiro alinhar o modelo de trabalho e de contratação numa conversa direta, de acordo com a vaga. Fale comigo pelo e-mail ou WhatsApp no fim da página.",
+    en: "I prefer to align the work and contract model in a direct conversation, based on the role. Reach me by email or WhatsApp at the bottom of the page."
   },
   {
     k: ["onde", "mora", "cidade", "localizacao", "where", "live", "located", "location", "fuso", "timezone"],
