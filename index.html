@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=20261109b">
+<link rel="stylesheet" href="assets/style.css?v=20261109c">
 </head>
 <body>
 <canvas id="grid" aria-hidden="true"></canvas>
@@ -42,7 +42,6 @@
   <div class="wrap hero">
     <div class="hero-top">
       <div>
-        <div class="status mono"><i></i><span data-i18n="hero.status">Disponível para novas oportunidades</span></div>
         <h1 aria-label="Pedro Batista"><span class="ln"><span class="in">Pedro</span></span><span class="ln"><span class="in">Batista</span></span></h1>
       </div>
       <figure class="photo">
@@ -67,8 +66,8 @@
       <div class="about-grid">
         <div class="metric"><b data-count="8" data-suffix="+">8+</b><span data-i18n="m1">anos de experiência em desenvolvimento</span></div>
         <div class="metric"><b data-count="15" data-suffix="+">15+</b><span data-i18n="m2">microsserviços em produção</span></div>
-        <div class="metric"><b data-count="3" data-suffix="+">3+</b><span data-i18n="m3">produtos entregues de ponta a ponta</span></div>
-        <div class="metric"><b data-count="6" data-suffix="+">6+</b><span data-i18n="m4">setores de negócio atendidos</span></div>
+        <div class="metric"><b data-count="6" data-suffix="+">6+</b><span data-i18n="m3">produtos entregues de ponta a ponta</span></div>
+        <div class="metric"><b data-count="9" data-suffix="+">9+</b><span data-i18n="m4">setores de negócio atendidos</span></div>
       </div>
     </div>
   </section>
@@ -118,6 +117,11 @@
     <div class="wrap">
       <div class="sec-head"><h2 data-i18n="proj.title">Projetos</h2><span class="idx mono">03 / 06</span></div>
       <div class="projects" id="proj-list"></div>
+      <a class="proj-more" href="#pergunte">
+        <span class="n mono">+</span>
+        <span class="t"><b data-i18n="proj.more">E muito mais.</b><span data-i18n="proj.moreSub">Estes são os destaques. Ao longo da carreira entreguei outros projetos, de sistemas internos a integrações e automações.</span></span>
+        <span class="go mono" data-i18n="proj.moreGo">Pergunte sobre eles ↓</span>
+      </a>
     </div>
   </section>
 
@@ -131,9 +135,9 @@
 
   <section id="stack" style="padding-bottom:80px">
     <div class="wrap"><div class="sec-head"><h2 data-i18n="stack.title">Stack</h2><span class="idx mono">+</span></div></div>
-    <div class="marquee"><div class="track" id="m1"></div></div>
-    <div class="marquee out"><div class="track" id="m2"></div></div>
     <div class="wrap">
+      <div class="stack-switch mono" id="stack-switch"></div>
+      <div id="stack-view"></div>
       <div class="skills-table" id="skills"></div>
       <div class="sec-head" style="margin:96px 0 32px"><h2 data-i18n="edu.title" style="font-size:clamp(30px,4vw,48px)">Formação</h2></div>
       <div class="edu" id="edu"></div>
@@ -182,8 +186,9 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
-<script src="assets/content.js?v=20261109b"></script>
-<script src="assets/arch.js?v=20261109b"></script>
-<script src="assets/app.js?v=20261109b"></script>
+<script src="assets/content.js?v=20261109c"></script>
+<script src="assets/arch.js?v=20261109c"></script>
+<script src="assets/stack.js?v=20261109c"></script>
+<script src="assets/app.js?v=20261109c"></script>
 </body>
 </html>

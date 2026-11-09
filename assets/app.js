@@ -97,8 +97,7 @@
       </div>`).join("");
 
     const items = (arr, map) => arr.map(s => `<span>${esc(lang === "en" && map && map[s] ? map[s] : s)}</span>`).join("");
-    document.getElementById("m1").innerHTML = items(MARQUEE1).repeat(3);
-    document.getElementById("m2").innerHTML = items(MARQUEE2, MARQUEE2_EN).repeat(3);
+    if (window.renderStack) window.renderStack(lang);
 
     document.getElementById("skills").innerHTML = SKILLS.map(s => `<div class="sk"><span class="k mono">${esc(L(s.k, lang))}</span><div>${esc(L(s.v, lang))}</div></div>`).join("");
     document.getElementById("edu").innerHTML = EDU.map(e => `<div><span class="k mono">${esc(L(e.k, lang))}</span><b>${esc(L(e.t, lang))}</b><span>${esc(L(e.s, lang))}</span></div>`).join("");
@@ -263,7 +262,6 @@
   gsap.timeline({ defaults: { ease: "expo.out" } })
     .from(".hero h1 .in", { yPercent: 110, duration: 1.4, stagger: .12 })
     .from(".photo", { clipPath: "inset(100% 0 0 0)", duration: 1.4, ease: "expo.inOut" }, 0)
-    .from(".status", { opacity: 0, y: 10, duration: .8 }, "-=1.1")
     .from(".hero-foot > *", { opacity: 0, y: 24, duration: 1, stagger: .08 }, "-=1")
     .from(".scroll-hint", { opacity: 0, duration: .8 }, "-=.6")
     .from(".hud", { yPercent: -100, duration: 1 }, "-=1.2");
@@ -297,7 +295,7 @@
   gsap.from(".xp-item", { opacity: 0, y: 24, duration: .8, stagger: .07, ease: "power3.out", scrollTrigger: { trigger: "#xp-list", start: "top 85%" } });
   gsap.from(".term", { opacity: 0, y: 30, duration: 1, ease: "power3.out", scrollTrigger: { trigger: ".term", start: "top 85%" } });
 
-  [["#m1", -1], ["#m2", 1]].forEach(([sel, dir]) => {
+  [["#m1", -1], ["#m2", 1]].filter(([sel]) => document.querySelector(sel)).forEach(([sel, dir]) => {
     const loop = gsap.fromTo(sel, { xPercent: dir < 0 ? 0 : -33.333 }, { xPercent: dir < 0 ? -33.333 : 0, duration: 40, ease: "none", repeat: -1 });
     ScrollTrigger.create({ trigger: "#stack", start: "top bottom", end: "bottom top", onUpdate: s => gsap.to(loop, { timeScale: 1 + Math.abs(s.getVelocity()) / 400, duration: .3, overwrite: true, onComplete: () => gsap.to(loop, { timeScale: 1, duration: 1 }) }) });
   });

@@ -35,7 +35,7 @@ window.T = {
       "API em Fastify e Zod, PostgreSQL com PostGIS, Redis e app em Expo e React Native para iPhone, Android e web."
     ],
     "sys.live": "● em produção",
-    "proj.title": "Projetos", "xp.title": "Experiência", "xp.hint": "Clique em uma experiência para ver o detalhe",
+    "proj.title": "Projetos", "proj.more": "E muito mais.", "proj.moreSub": "Estes são os destaques. Ao longo da carreira entreguei outros projetos, de sistemas internos a integrações e automações.", "proj.moreGo": "Pergunte sobre eles ↓", "xp.title": "Experiência", "xp.hint": "Clique em uma experiência para ver o detalhe",
     "stack.title": "Stack", "edu.title": "Formação",
     "ask.title": "Pergunte sobre mim",
     "ask.lead": "Recrutador(a) ou time técnico? Faça uma pergunta sobre minha experiência e receba a resposta na hora.",
@@ -83,7 +83,7 @@ window.T = {
       "Fastify and Zod API, PostgreSQL with PostGIS, Redis and an Expo and React Native app for iPhone, Android and the web."
     ],
     "sys.live": "● in production",
-    "proj.title": "Projects", "xp.title": "Experience", "xp.hint": "Click an experience to see the details",
+    "proj.title": "Projects", "proj.more": "And much more.", "proj.moreSub": "These are the highlights. Over my career I have delivered other projects, from internal systems to integrations and automations.", "proj.moreGo": "Ask about them ↓", "xp.title": "Experience", "xp.hint": "Click an experience to see the details",
     "stack.title": "Stack", "edu.title": "Education",
     "ask.title": "Ask about me",
     "ask.lead": "Recruiter or engineering team? Ask a question about my experience and get an answer right away.",
@@ -129,6 +129,36 @@ window.PROJECTS = [
       en: ["Integration between Serpro Integra Contador and the Base44 platform.", "DAS tax slip lookup and issuing and MEI installment management.", "Authentication with Consumer Key/Secret and an e-CNPJ digital certificate.", "Caching, idempotency, failure handling and usage control for the government API.", "Automated lookups, recalculations and scheduling.", "Deployment on a Linux VPS with Docker, Nginx and HTTPS; acceptance testing with the client."]
     },
     stack: ["Node.js", "REST", "e-CNPJ", "Docker", "Nginx", "Base44"]
+  },
+  {
+    tag: { pt: "Jogo · Projeto interno", en: "Game · Internal project" },
+    title: { pt: "Jogo corporativo para uma grande instituição financeira", en: "Corporate game for a major financial institution" },
+    desc: { pt: "Um jogo completo para um projeto interno, feito sozinho e de ponta a ponta: da estrutura ao código, passando pela apresentação do jogo e o acompanhamento das partidas com as equipes.", en: "A complete game for an internal project, built on my own and end to end: from the structure to the code, through presenting the game and following the matches with the teams." },
+    items: {
+      pt: ["Frontend em Angular com uma proposta bem diferente do padrão corporativo.", "Backend em Node.js com TypeScript.", "Estrutura completa desenhada e desenvolvida individualmente.", "Apresentação do jogo e acompanhamento com o pessoal durante o uso."],
+      en: ["Angular frontend with a very different take from the usual corporate app.", "Node.js backend with TypeScript.", "The whole structure designed and built on my own.", "Presented the game and followed along with the teams while they played."]
+    },
+    stack: ["Angular", "Node.js", "TypeScript"]
+  },
+  {
+    tag: { pt: "Dados esportivos · Tempo real", en: "Sports data · Real time" },
+    title: { pt: "Plataforma de estatística e probabilidade para basquete", en: "Basketball statistics and probability platform" },
+    desc: { pt: "Sistema completo de estatística e probabilidade para jogos de basquete, com o site integrado aos dados da NBA em tempo real.", en: "A complete statistics and probability system for basketball games, with the website integrated with real-time NBA data." },
+    items: {
+      pt: ["Definição dos parâmetros: regras e números possíveis para cada cálculo.", "Cálculo da probabilidade dos jogos, dos resultados e das estatísticas.", "Site integrado com as informações da NBA, com dados em tempo real.", "Frontend em Angular e motor de cálculo em Python."],
+      en: ["Parameter setup: rules and possible numbers for each calculation.", "Probability of games, results and statistics.", "Website integrated with NBA information, with real-time data.", "Angular frontend and a Python calculation engine."]
+    },
+    stack: ["Angular", "Python", "APIs de dados"]
+  },
+  {
+    tag: { pt: "Bots · Telegram", en: "Bots · Telegram" },
+    title: { pt: "Projetos e bots para Telegram", en: "Telegram projects and bots" },
+    desc: { pt: "Bots para Telegram que automatizam a comunicação com o público: alertas personalizados, administração de canais e envio de mensagens privadas.", en: "Telegram bots that automate communication with the audience: personalized alerts, channel administration and private messages." },
+    items: {
+      pt: ["Alertas: cada pessoa segue o que quer e recebe no privado quando aparece algo que combina.", "Administração de canais.", "Envio de mensagens privadas."],
+      en: ["Alerts: people follow what they want and get a private message when something matches.", "Channel administration.", "Private messaging."]
+    },
+    stack: ["Telegram Bot API"]
   }
 ];
 
@@ -220,13 +250,13 @@ window.MARQUEE2 = ["Microsserviços", "Fastify", "Docker", "Kubernetes", "AWS", 
 window.MARQUEE2_EN = { "Microsserviços": "Microservices" };
 
 window.SKILLS = [
-  { k: { pt: "Frontend", en: "Frontend" }, v: "Angular, React, React Native, Expo, Vue.js, TypeScript, JavaScript, RxJS, TanStack Query, Signals, Microfrontends, SSR, HTML, CSS, SCSS, Tailwind CSS, Bootstrap" },
-  { k: { pt: "Backend", en: "Backend" }, v: "Node.js, Express, Fastify, Zod, .NET / .NET Core, C#, ASP.NET Core, Entity Framework, Java, Spring Boot, Spring Security, Python" },
+  { k: { pt: "Frontend", en: "Frontend" }, v: "Angular, AngularJS, React, React Native, Expo, Vue.js, TypeScript, JavaScript, RxJS, TanStack Query, Signals, Microfrontends, SSR, HTML, CSS, SCSS, Tailwind CSS, Bootstrap" },
+  { k: { pt: "Backend", en: "Backend" }, v: "Node.js, Express, Fastify, Zod, .NET / .NET Core, C#, ASP.NET Core, Entity Framework, VB.NET, VB6, Java, Spring Boot, Spring Security, Python" },
   { k: { pt: "Arquitetura", en: "Architecture" }, v: { pt: "Microsserviços, sistemas distribuídos, multi-tenant, APIs REST, API Gateway, mensageria e filas, idempotência, Clean Code, SOLID", en: "Microservices, distributed systems, multi-tenant, REST APIs, API gateway, messaging and queues, idempotency, Clean Code, SOLID" } },
-  { k: { pt: "Cloud e DevOps", en: "Cloud & DevOps" }, v: "AWS (Lambda, DynamoDB, S3, Cognito, CloudFormation), Azure, Docker, Kubernetes, GitHub Actions, CI/CD, Nginx, Kong, Linux, Cloudflare" },
+  { k: { pt: "Cloud e DevOps", en: "Cloud & DevOps" }, v: "AWS (Lambda, DynamoDB, S3, Cognito, CloudFormation), Serverless, Azure, Docker, Kubernetes, GitHub Actions, CI/CD, Nginx, Kong, Linux, Cloudflare" },
   { k: { pt: "Dados", en: "Data" }, v: "PostgreSQL, PostGIS, SQL Server, MySQL, Oracle, MongoDB, DynamoDB, Redis, SQLite, Drizzle ORM, Mongoose" },
   { k: { pt: "IA", en: "AI" }, v: { pt: "LLMs, API do Claude (Anthropic), engenharia de prompt, modelos multimodais (texto e imagem), extração de informação, análise de padrões", en: "LLMs, Claude API (Anthropic), prompt engineering, multimodal models (text and image), information extraction, pattern analysis" } },
-  { k: { pt: "Qualidade", en: "Quality" }, v: { pt: "Vitest, Jest, Jasmine, Karma, Cypress, Playwright, Selenium, Appium, Pytest, Postman, testes de mutação", en: "Vitest, Jest, Jasmine, Karma, Cypress, Playwright, Selenium, Appium, Pytest, Postman, mutation testing" } },
+  { k: { pt: "Qualidade", en: "Quality" }, v: { pt: "Vitest, Jest, JUnit, Jasmine, Karma, Cypress, Playwright, Selenium, Appium, Pytest, Postman, testes de mutação", en: "Vitest, Jest, JUnit, Jasmine, Karma, Cypress, Playwright, Selenium, Appium, Pytest, Postman, mutation testing" } },
   { k: { pt: "Pagamentos e integrações", en: "Payments & integrations" }, v: { pt: "Gateways de pagamento, Pix, webhooks, integrações com e-commerce, APIs de governo (Serpro), certificado digital", en: "Payment gateways, Pix, webhooks, e-commerce integrations, government APIs (Serpro), digital certificates" } },
   { k: { pt: "Práticas", en: "Practices" }, v: { pt: "Scrum, Kanban, code review, mentoria, entrevistas técnicas, documentação técnica, observabilidade", en: "Scrum, Kanban, code review, mentoring, technical interviews, technical documentation, observability" } }
 ];
@@ -249,8 +279,8 @@ window.QA = [
   },
   {
     k: ["quantos anos", "anos de experiencia", "quanto tempo", "senioridade", "how many years", "years of experience", "how long", "seniority"],
-    pt: "Tenho mais de 8 anos de experiência, começando em automação de testes na Cognizant e passando por full stack, backend e liderança técnica. Atuei em bancos, setor público, logística, aviação, varejo e produtos SaaS.",
-    en: "I have 8+ years of experience, starting in test automation at Cognizant and moving through full stack, backend and technical leadership. I've worked in banking, the public sector, logistics, aviation, retail and SaaS products."
+    pt: "Tenho mais de 8 anos de experiência, começando em automação de testes na Cognizant e passando por full stack, backend e liderança técnica. Atuei em mais de 9 setores: financeiro, setor público, logística e comércio exterior, aviação, marketing e e-commerce, fiscal, entretenimento e eventos, esportes e cidades sustentáveis.",
+    en: "I have 8+ years of experience, starting in test automation at Cognizant and moving through full stack, backend and technical leadership. I've worked across 9+ sectors: finance, the public sector, logistics and foreign trade, aviation, marketing and e-commerce, tax, entertainment and events, sports and sustainable cities."
   },
   {
     k: ["stack", "tecnologias", "linguagens", "frameworks", "ferramentas", "principal", "technologies", "languages", "tools", "main"],
@@ -279,8 +309,8 @@ window.QA = [
   },
   {
     k: ["python", "pytest"],
-    pt: "Uso Python em serviços da minha plataforma SaaS, como processamento de imagens, com testes em Pytest, rodando em produção ao lado dos serviços em Node.js.",
-    en: "I use Python in services of my SaaS platform, such as image processing, tested with Pytest and running in production alongside the Node.js services."
+    pt: "Uso Python em vários projetos: o motor de cálculo de estatística e probabilidade da plataforma de basquete, automações na plataforma fiscal para microempreendedores e serviços da plataforma SaaS, como processamento de imagens, com testes em Pytest.",
+    en: "I use Python across several projects: the statistics and probability engine of the basketball platform, automations in the tax platform for micro-entrepreneurs and services of the SaaS platform, such as image processing, tested with Pytest."
   },
   {
     k: ["react", "next", "vue"],
@@ -396,6 +426,26 @@ window.QA = [
     k: ["meta", "api da meta", "meta api", "graph api", "api do instagram", "instagram api", "instagram pela api", "redes sociais", "social media", "stories", "story", "publicar no instagram", "publicou no instagram", "publicacao no instagram", "post automatico", "agendar post"],
     pt: "Sim. No app de eventos os stories e posts do Instagram saem direto do sistema pela API oficial da Meta: login da empresa pelo Facebook Login for Business, a arte do evento vira a peça, a equipe agenda e um worker publica no horário, com idempotência para nunca postar em dobro e o token guardado cifrado.",
     en: "Yes. In the events app, Instagram stories and posts go out straight from the system through Meta's official API: the business connects via Facebook Login for Business, the event artwork becomes the post, the team schedules it and a worker publishes on time, with idempotency so nothing is posted twice and the token stored encrypted."
+  },
+  {
+    k: ["jogo", "game", "gamificacao", "gamification"],
+    pt: "Fiz sozinho um jogo completo para um projeto interno de uma grande instituição financeira: frontend em Angular, com uma proposta bem diferente do padrão corporativo, e backend em Node.js com TypeScript. Montei a estrutura de ponta a ponta e também apresentei o jogo e acompanhei as partidas com as equipes.",
+    en: "I built, on my own, a complete game for an internal project at a major financial institution: an Angular frontend with a very different take from the usual corporate app and a Node.js backend with TypeScript. I built the whole structure end to end and also presented the game and followed the matches with the teams."
+  },
+  {
+    k: ["basquete", "nba", "esporte", "esportes", "estatistica", "probabilidade", "basketball", "sports", "statistics", "probability"],
+    pt: "Entreguei uma plataforma completa de estatística e probabilidade para basquete: Angular no frontend e Python no motor de cálculo. Ela define os parâmetros (regras e números possíveis), calcula a probabilidade dos jogos e dos resultados e tem o site integrado aos dados da NBA em tempo real.",
+    en: "I delivered a complete statistics and probability platform for basketball: Angular on the frontend and Python in the calculation engine. It sets the parameters (rules and possible numbers), calculates the probability of games and results, and its website is integrated with real-time NBA data."
+  },
+  {
+    k: ["telegram", "bot", "bots", "chatbot"],
+    pt: "Sim. Criei projetos e bots para Telegram: alertas personalizados, em que cada pessoa segue o que quer e recebe no privado quando aparece algo que combina; administração de canais; e envio de mensagens privadas.",
+    en: "Yes. I've built Telegram projects and bots: personalized alerts, where people follow what they want and get a private message when something matches; channel administration; and private messaging."
+  },
+  {
+    k: ["projetos", "portfolio", "entregou", "entregas", "produtos", "projects", "delivered", "products"],
+    pt: "Entreguei mais de 6 produtos de ponta a ponta: a plataforma SaaS de automação de marketing, o app de eventos com IA para iPhone, Android e web, a automação fiscal para microempreendedores, um jogo corporativo para uma grande instituição financeira, uma plataforma de estatística e probabilidade para basquete com dados da NBA em tempo real e bots para Telegram.",
+    en: "I've delivered 6+ products end to end: the marketing automation SaaS, the AI events app for iPhone, Android and the web, the tax automation for micro-entrepreneurs, a corporate game for a major financial institution, a basketball statistics and probability platform with real-time NBA data, and Telegram bots."
   },
   {
     k: ["disponibilidade", "quando", "comecar", "inicio", "imediato", "available", "start", "when", "notice"],
