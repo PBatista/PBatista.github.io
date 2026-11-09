@@ -1,0 +1,121 @@
+/* Diagramas: título, subtítulo e explicação de cada bloco (PT e EN). */
+window.ARCH = {
+  portal:   { t: { pt: "Portal web", en: "Web portal" }, s: "ANGULAR · SSR · SIGNALS",
+              d: { pt: "Portal em Angular com componentes standalone, signals e SSR híbrido. Sessão com JWT e rotação de refresh token; atualização em tempo real por SSE.", en: "Angular portal with standalone components, signals and hybrid SSR. JWT session with refresh token rotation; real-time updates over SSE." } },
+  public:   { t: { pt: "API pública", en: "Public API" }, s: "CHAVES · WEBHOOKS · OPENAPI",
+              d: { pt: "API para os clientes integrarem os próprios sistemas: chaves com escopos, limites por empresa, idempotência, documentação OpenAPI interativa e webhooks assinados com HMAC e retentativas.", en: "API for customers to integrate their own systems: scoped keys, per-company limits, idempotency, interactive OpenAPI docs and HMAC-signed webhooks with retries." } },
+  edge:     { t: { pt: "Borda", en: "Edge" }, s: "NGINX · HTTPS · KONG",
+              d: { pt: "Nginx com HTTPS na frente e Kong como API Gateway: cada cliente tem rota, credencial e limite de requisições próprios, configurados automaticamente.", en: "Nginx with HTTPS in front and Kong as the API gateway: each customer has its own route, credential and rate limit, configured automatically." } },
+  bff:      { t: { pt: "API do portal (BFF)", en: "Portal API (BFF)" }, s: "REGRAS · JWT · RBAC · AUDITORIA",
+              d: { pt: "Dona das regras de negócio. Autenticação, permissões por módulo, isolamento por empresa, auditoria e orquestração dos serviços internos por chave de serviço, nunca exposta ao navegador.", en: "Owns the business rules. Authentication, per-module permissions, company isolation, auditing and orchestration of internal services with service keys never exposed to the browser." } },
+  pay:      { t: { pt: "Pagamentos", en: "Payments" }, s: "GATEWAYS · PIX · NFS-E",
+              d: { pt: "Assinaturas recorrentes com gateways de cartão e Pix, upgrades proporcionais, créditos, indicações, add-ons por uso e emissão automática de nota fiscal de serviço.", en: "Recurring subscriptions with card and Pix gateways, prorated upgrades, credits, referrals, usage-based add-ons and automated service invoices." } },
+  integ:    { t: { pt: "Integrações", en: "Integrations" }, s: "E-COMMERCE · APIS",
+              d: { pt: "Conectores com diversas plataformas de e-commerce e redes parceiras: geram links rastreáveis e buscam os dados do produto para montar a mensagem.", en: "Connectors to several e-commerce platforms and partner networks: they generate trackable links and fetch product data to build the message." } },
+  scrape:   { t: { pt: "Scrapers", en: "Scrapers" }, s: "PLAYWRIGHT · ISOLADOS",
+              d: { pt: "Leitura de páginas com navegador real (Playwright), em serviços isolados: é a parte que mais quebra quando um site muda, então fica separada do caminho crítico.", en: "Page reading with a real browser (Playwright) in isolated services: it's the part most likely to break when a site changes, so it stays out of the critical path." } },
+  ai:       { t: { pt: "IA · LLM", en: "AI · LLM" }, s: "CLAUDE API",
+              d: { pt: "IA generativa no fluxo do produto: gera e revisa textos no estilo de cada cliente, analisa imagens e identifica padrões de postagem, sempre com aprovação humana antes de publicar.", en: "Generative AI in the product flow: writes and reviews copy in each customer's style, analyzes images and detects posting patterns, always with human approval before publishing." } },
+  img:      { t: { pt: "Imagem", en: "Imaging" }, s: "PYTHON · PILLOW",
+              d: { pt: "Serviço em Python que mede e desenha a marca d'água da empresa nas fotos, respeitando a área livre de cada imagem.", en: "Python service that measures and draws the company watermark on photos, respecting each image's free area." } },
+  msg:      { t: { pt: "Mensageria", en: "Messaging" }, s: "1 CONTAINER / CLIENTE",
+              d: { pt: "Envio por WhatsApp com um container dedicado por cliente: fila com histórico, agendamento, velocidade conforme as conexões, número reserva com failover e reconciliação de estado.", en: "WhatsApp delivery with a dedicated container per customer: queue with history, scheduling, throughput based on connections, backup number failover and state reconciliation." } },
+  tg:       { t: { pt: "Telegram e alertas", en: "Telegram & alerts" }, s: "BOTS · FILTROS",
+              d: { pt: "Canal do Telegram por empresa e bot de alertas: cada pessoa segue palavras-chave e recebe no privado quando uma oferta casa com o filtro, com controle de taxa por bot.", en: "Per-company Telegram channel and an alerts bot: people follow keywords and get a private message when an offer matches, with per-bot rate control." } },
+  links:    { t: { pt: "Links", en: "Links" }, s: "REDIRECT · ENCURTADOR",
+              d: { pt: "Serviço público de alto volume: direciona o público para um grupo com vaga e encurta links com contagem de cliques. Caminho quente resolvido com índices e cache em memória.", en: "High-volume public service: routes the audience to a group with free seats and shortens links with click counting. Hot path served with indexes and in-memory cache." } },
+  hooks:    { t: { pt: "Webhooks", en: "Webhooks" }, s: "EVENTOS · HMAC",
+              d: { pt: "Recebe os eventos do provedor de mensagens de todos os clientes: entradas e saídas dos grupos e quedas de conexão, autenticados e isolados por cliente.", en: "Receives the messaging provider's events for all customers: group joins and leaves and connection drops, authenticated and isolated per customer." } },
+  monitor:  { t: { pt: "Monitoramento", en: "Monitoring" }, s: "EVENTOS · ESTUDO",
+              d: { pt: "Acompanha canais de referência e guarda os eventos para estudo e reaproveitamento, com cobrança por uso fechada no fim do mês.", en: "Follows reference channels and stores events for study and reuse, with usage-based billing closed at month end." } },
+  prov:     { t: { pt: "Provisionador", en: "Provisioner" }, s: "CONTAINERS · GATEWAY",
+              d: { pt: "Quando um cliente nasce, cria o ambiente dele e configura o acesso no gateway; também bloqueia e remove. Serviço interno, sem acesso pelo público.", en: "When a customer is created, it spins up their environment and configures access on the gateway; it also blocks and removes. Internal service, not reachable by the public." } },
+  mongo:    { t: { pt: "MongoDB", en: "MongoDB" }, s: "BANCO POR CLIENTE",
+              d: { pt: "Banco principal, com isolamento por cliente. Índices pensados para os caminhos quentes e backup diário automatizado.", en: "Main database, with per-customer isolation. Indexes designed for the hot paths and automated daily backups." } },
+  pg:       { t: { pt: "PostgreSQL", en: "PostgreSQL" }, s: "GATEWAY",
+              d: { pt: "Banco do API Gateway: rotas, consumidores, chaves e limites de cada cliente.", en: "The API gateway's database: each customer's routes, consumers, keys and limits." } },
+  storage:  { t: { pt: "Object storage", en: "Object storage" }, s: "CDN · MÍDIA",
+              d: { pt: "Imagens e vídeos enviados direto do navegador para o armazenamento, servidos por CDN com URL absoluta.", en: "Images and videos uploaded straight from the browser to storage and served through a CDN with absolute URLs." } },
+  cicd:     { t: { pt: "Entrega contínua", en: "Continuous delivery" }, s: "GITHUB ACTIONS · REGISTRY · DIGEST · ROLLBACK",
+              d: { pt: "O PR roda build, testes e auditoria de dependências. O merge gera uma imagem Docker imutável, publica no registry e faz o deploy pelo digest, com health check e volta automática para a versão anterior se falhar.", en: "PRs run build, tests and dependency audits. Merging builds an immutable Docker image, pushes it to the registry and deploys by digest, with health checks and automatic rollback on failure." } },
+
+  ig:       { t: { pt: "Instagram", en: "Instagram" }, s: "POST · REELS · STORY",
+              d: { pt: "A fonte dos eventos: posts, reels, stories e destaques que locais e artistas publicam.", en: "The source of events: posts, reels, stories and highlights that venues and artists publish." } },
+  venues:   { t: { pt: "Locais", en: "Venues" }, s: "PERFIS · LOGO · HORÁRIO",
+              d: { pt: "Perfis de bares, restaurantes e casas de show: nome, tipo, telefone, horário e foto viram o cadastro do local.", en: "Profiles of bars, restaurants and venues: name, type, phone, hours and photo become the venue record." } },
+  artists:  { t: { pt: "Artistas", en: "Artists" }, s: "PERFIS · AGENDA",
+              d: { pt: "Perfis de bandas e artistas, que alimentam a lista de artistas do app e ajudam a entender a programação.", en: "Band and artist profiles, which feed the app's artist list and help understand the programming." } },
+  ext:      { t: { pt: "Extensão do navegador", en: "Browser extension" }, s: "CAPTURA SOB DEMANDA",
+              d: { pt: "Extensão do Chrome/Edge da equipe: lê só a aba aberta e só no clique. Junta o carrossel, a legenda, a localização marcada e a data do post, sem coleta em massa e sem pedir senha do Instagram.", en: "The team's Chrome/Edge extension: reads only the open tab and only on click. Gathers the carousel, caption, tagged location and post date, with no mass scraping and no Instagram password." } },
+  inbox:    { t: { pt: "Capturas", en: "Captures" }, s: "FILA · DEDUPLICAÇÃO",
+              d: { pt: "Caixa de entrada da equipe. O link é normalizado e a mesma postagem não entra duas vezes; uma captura pode ser substituída pela versão mais nova.", en: "The team's inbox. Links are normalized and the same post never comes in twice; a capture can be replaced with a newer version." } },
+  vision:   { t: { pt: "IA multimodal", en: "Multimodal AI" }, s: "LEGENDA + FOLDER",
+              d: { pt: "Com a API do Claude, lê a legenda e a imagem do folder e extrai data, hora, preço, link do ingresso, atração e local. A data do post nunca vira a data do evento: só ajuda a interpretar um \"amanhã\".", en: "Using the Claude API, it reads the caption and the flyer image and extracts date, time, price, ticket link, line-up and venue. The post date never becomes the event date: it only helps interpret a \"tomorrow\"." } },
+  pattern:  { t: { pt: "Rotina por local", en: "Per-venue routine" }, s: "8 SEMANAS · DIA DA SEMANA",
+              d: { pt: "A partir das capturas das últimas 8 semanas, identifica o padrão de cada local por dia da semana, sugere datas e horários e aponta o que está atrasado para a equipe conferir.", en: "From the last 8 weeks of captures, it finds each venue's pattern by weekday, suggests dates and times and flags what is overdue for the team to check." } },
+  eapi:     { t: { pt: "API", en: "API" }, s: "NODE.JS · FASTIFY · ZOD",
+              d: { pt: "API em Fastify com Zod em toda rota: a resposta só leva o que o schema declara e o contrato OpenAPI gera os tipos do app. Toda escrita confere a permissão no servidor (dono, administrador, editor); limite de requisições por rota e vários processos em paralelo.", en: "Fastify API with Zod on every route: responses carry only what the schema declares and the OpenAPI contract generates the app's types. Every write checks permissions on the server (owner, admin, editor); per-route rate limits and multiple processes in parallel." } },
+  emobile:  { t: { pt: "App iOS e Android", en: "iOS & Android app" }, s: "EXPO · REACT NATIVE",
+              d: { pt: "Expo e React Native com rotas tipadas (Expo Router), TanStack Query e cliente gerado do OpenAPI. Mapa nativo, entrar com Apple e Google, vídeo e compartilhamento direto para o Instagram.", en: "Expo and React Native with typed routes (Expo Router), TanStack Query and a client generated from OpenAPI. Native maps, Sign in with Apple and Google, video and direct Instagram sharing." } },
+  eweb:     { t: { pt: "Site", en: "Website" }, s: "REACT NATIVE WEB · MAPLIBRE",
+              d: { pt: "O mesmo código do app exportado como site e servido por Nginx; mapa com MapLibre e páginas públicas com prévia para o WhatsApp.", en: "The same app code exported as a website and served by Nginx; MapLibre maps and public pages with WhatsApp previews." } },
+  eig:      { t: { pt: "Instagram oficial", en: "Official Instagram" }, s: "STORIES · POSTS AGENDADOS",
+              d: { pt: "Publicação de stories e posts direto do sistema pela API oficial da Meta: a arte do evento vira a peça, a equipe agenda e um worker publica no horário, com idempotência para nunca postar em dobro e token guardado cifrado.", en: "Stories and posts published straight from the system through Meta's official API: the event artwork becomes the post, the team schedules it and a worker publishes on time, with idempotency so nothing is posted twice and the token stored encrypted." } },
+  epg:      { t: { pt: "PostgreSQL", en: "PostgreSQL" }, s: "POSTGIS · PG_TRGM",
+              d: { pt: "PostgreSQL com PostGIS para busca por localização e raio, pg_trgm para busca sem acento e migrações versionadas com Drizzle.", en: "PostgreSQL with PostGIS for location and radius search, pg_trgm for accent-insensitive search and versioned migrations with Drizzle." } },
+  eredis:   { t: { pt: "Redis", en: "Redis" }, s: "RATE LIMIT · PUB/SUB",
+              d: { pt: "Limite de requisições compartilhado entre os processos e pub/sub para as notificações ao vivo entre eles.", en: "Rate limiting shared across processes and pub/sub for live notifications between them." } },
+  estorage: { t: { pt: "Object storage", en: "Object storage" }, s: "IMAGEM · VÍDEO",
+              d: { pt: "Folders, galerias e vídeos de até 60 s; do vídeo saem 5 quadros para a capa e ele só baixa quando a pessoa toca.", en: "Flyers, galleries and videos up to 60 s; 5 frames are extracted for the cover and the video only downloads when tapped." } },
+  epush:    { t: { pt: "Push", en: "Push" }, s: "FILA · LOTES · RECIBOS",
+              d: { pt: "Notificações com fila no banco, envio em lotes e conferência dos recibos 15 minutos depois; o sino do app funciona em qualquer aparelho.", en: "Notifications with a database queue, batched sending and receipt checks 15 minutes later; the in-app bell works on any device." } },
+  review:   { t: { pt: "Revisão da equipe", en: "Team review" }, s: "EDITOR PRÉ-PREENCHIDO",
+              d: { pt: "\"Criar evento\" abre o editor já preenchido pela IA. Nada vai ao ar sozinho: uma pessoa revisa e publica.", en: "\"Create event\" opens the editor pre-filled by the AI. Nothing goes live on its own: a person reviews and publishes." } },
+  app:      { t: { pt: "App de eventos", en: "Events app" }, s: "AGENDA · LOCAIS · ARTISTAS",
+              d: { pt: "O público encontra o que fazer: agenda por data, locais, artistas e a página de cada evento com o carrossel de fotos.", en: "The audience finds what to do: a schedule by date, venues, artists and each event page with its photo carousel." } }
+};
+/* Posição dos blocos, das linhas e das camadas de cada diagrama. */
+window.DIAGRAMS = {
+  saas: {
+    vb: "0 0 960 730",
+    labels: [["CLIENT", 66], ["EDGE", 166], ["CORE", 266], ["SERVICES", 376], ["", 466], ["DATA · INFRA", 576], ["DELIVERY", 686]],
+    nodes: [
+      ["portal", 200, 34, 240, 1], ["public", 520, 34, 240, 0],
+      ["edge", 330, 134, 300, 1], ["bff", 330, 234, 300, 1],
+      ["pay", 90, 344, 160, 0], ["integ", 260, 344, 160, 0], ["scrape", 430, 344, 160, 0], ["ai", 600, 344, 160, 1], ["img", 770, 344, 160, 0],
+      ["msg", 90, 434, 160, 1], ["tg", 260, 434, 160, 0], ["links", 430, 434, 160, 0], ["hooks", 600, 434, 160, 0], ["monitor", 770, 434, 160, 0],
+      ["prov", 90, 544, 200, 1], ["mongo", 310, 544, 190, 0], ["pg", 520, 544, 190, 0], ["storage", 730, 544, 200, 0],
+      ["cicd", 230, 654, 500, 2]
+    ],
+    edges: [
+      ["M320 90 V112 H480 V134", 1], ["M640 90 V112 H480", 0], ["M480 190 V234", 1], ["M480 290 V318", 1],
+      ["M170 318 H945", 0], ["M170 318 V344", 0], ["M340 318 V344", 0], ["M510 318 V344", 0], ["M680 318 V344", 1], ["M850 318 V344", 0],
+      ["M945 318 V520", 0], ["M170 417 H945", 0], ["M170 417 V434", 1], ["M340 417 V434", 0], ["M510 417 V434", 0], ["M680 417 V434", 0], ["M850 417 V434", 0],
+      ["M190 520 H945", 0], ["M190 520 V544", 1], ["M405 520 V544", 0], ["M615 520 V544", 0], ["M830 520 V544", 0]
+    ],
+    pulse: "M320 90 V112 H480 V134 M480 190 V234 M480 290 V318 H945 V417 H170 V434"
+  },
+  events: {
+    vb: "0 0 960 870",
+    labels: [["SOURCES", 66], ["CAPTURE", 176], ["INBOX", 286], ["AI", 396], ["REVIEW", 506], ["API", 616], ["CLIENTS", 726], ["DATA", 836]],
+    nodes: [
+      ["ig", 110, 34, 220, 0], ["venues", 370, 34, 220, 0], ["artists", 630, 34, 220, 0],
+      ["ext", 330, 144, 300, 1], ["inbox", 330, 254, 300, 0],
+      ["vision", 150, 364, 300, 1], ["pattern", 510, 364, 300, 0],
+      ["review", 330, 474, 300, 1],
+      ["eapi", 330, 584, 300, 1],
+      ["emobile", 110, 694, 240, 1], ["eweb", 370, 694, 220, 0], ["eig", 610, 694, 260, 1],
+      ["epg", 90, 804, 190, 1], ["eredis", 300, 804, 190, 0], ["estorage", 510, 804, 190, 0], ["epush", 720, 804, 190, 0]
+    ],
+    edges: [
+      ["M220 90 V117 H480 V144", 0], ["M480 90 V144", 1], ["M740 90 V117 H480", 0], ["M480 200 V254", 1],
+      ["M480 310 V337 H300 V364", 1], ["M480 337 H660 V364", 0], ["M300 420 V447 H480 V474", 1], ["M660 420 V447 H480", 0],
+      ["M480 530 V584", 1],
+      ["M480 640 V667 H230 V694", 1], ["M480 667 V694", 0], ["M480 667 H740 V694", 1],
+      ["M630 612 H945 V777 H185 V804", 1], ["M395 777 V804", 0], ["M605 777 V804", 0], ["M815 777 V804", 0]
+    ],
+    pulse: "M480 90 V144 M480 200 V254 M480 310 V337 H300 V364 M300 420 V447 H480 V474 M480 530 V584 M480 640 V667 H740 V694"
+  }
+};
+
+window.ARCH_HINT ={ pt: "Passe o mouse ou toque em um bloco para ver o que ele faz.", en: "Hover or tap a block to see what it does." };

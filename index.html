@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedro Luis Batista | Engenheiro de Software Sênior</title>
+<meta name="description" content="Engenheiro de Software Sênior, Full Stack e Tech Lead. Arquitetura de microsserviços, SaaS, Angular, .NET, Node.js, TypeScript e IA generativa em produção.">
+<meta property="og:title" content="Pedro Luis Batista | Engenheiro de Software Sênior">
+<meta property="og:description" content="Full Stack, Tech Lead e arquitetura de software. Sistemas em produção, de ponta a ponta.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/pedro.jpg">
+<meta name="theme-color" content="#0a0b0d">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230a0b0d'/><rect x='6' y='6' width='52' height='52' fill='none' stroke='%23d4ff3a' stroke-width='3'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='24' fill='%23d4ff3a'>PB</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<canvas id="grid" aria-hidden="true"></canvas>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="hud">
+  <a class="id" href="#top"><span class="mark">PB</span><span class="mono">Pedro L. Batista</span></a>
+  <nav class="mono">
+    <a href="#sobre"><span>01</span><b data-i18n="nav.about">Sobre</b></a>
+    <a href="#sistemas"><span>02</span><b data-i18n="nav.system">Sistemas</b></a>
+    <a href="#projetos"><span>03</span><b data-i18n="nav.projects">Projetos</b></a>
+    <a href="#experiencia"><span>04</span><b data-i18n="nav.experience">Experiência</b></a>
+    <a href="#pergunte"><span>05</span><b data-i18n="nav.ask">Pergunte</b></a>
+    <a href="#contato"><span>06</span><b data-i18n="nav.contact">Contato</b></a>
+  </nav>
+  <div class="right">
+    <span class="clock mono" id="clock">SJC --:--</span>
+    <button class="lang" id="lang" type="button">EN</button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="hero-top">
+      <div>
+        <div class="status mono"><i></i><span data-i18n="hero.status">Disponível · remoto e híbrido · CLT ou PJ</span></div>
+        <h1 aria-label="Pedro Batista"><span class="ln"><span class="in">Pedro</span></span><span class="ln"><span class="in">Batista</span></span></h1>
+      </div>
+      <figure class="photo">
+        <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+        <div class="frame"><img src="assets/pedro.jpg" alt="Foto de Pedro Luis Batista" width="1024" height="1280"><span class="scan" aria-hidden="true"></span></div>
+        <figcaption class="mono"><span>ID / 0001</span><span>BRT · UTC-3</span></figcaption>
+      </figure>
+    </div>
+    <div class="hero-foot">
+      <p data-i18n-html="hero.lead">Engenheiro de Software Sênior. Projeto, construo e opero <strong>sistemas em produção de ponta a ponta</strong>, da arquitetura ao deploy.</p>
+      <div><span class="k mono" data-i18n="hero.k1">Função</span><span data-i18n="hero.v1">Full Stack · Tech Lead · Arquitetura</span></div>
+      <div><span class="k mono" data-i18n="hero.k2">Base</span><span data-i18n="hero.v2">Angular · .NET · Node.js · TypeScript</span></div>
+      <a class="btn-cv" href="cv/Pedro_Luis_Batista_Curriculo.pdf" download><span data-i18n="hero.cv">Baixar currículo</span><span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="scroll-hint mono" data-i18n="hero.scroll">Role para explorar</div>
+  </div>
+
+  <section id="sobre">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="about.title">Sobre</h2><span class="idx mono">01 / 06</span></div>
+      <p class="manifest" id="manifest"></p>
+      <div class="about-grid">
+        <div class="metric"><b data-count="8" data-suffix="+">8+</b><span data-i18n="m1">anos de experiência em desenvolvimento</span></div>
+        <div class="metric"><b data-count="15" data-suffix="+">15+</b><span data-i18n="m2">microsserviços em produção</span></div>
+        <div class="metric"><b data-count="3" data-suffix="+">3+</b><span data-i18n="m3">produtos entregues de ponta a ponta</span></div>
+        <div class="metric"><b data-count="6" data-suffix="+">6+</b><span data-i18n="m4">setores de negócio atendidos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sistemas">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="sys.title">Sistemas em produção</h2><span class="idx mono">02 / 06</span></div>
+      <p class="sys-note mono" data-i18n="sys.note">Nomes de produtos, clientes e detalhes operacionais omitidos por confidencialidade.</p>
+
+      <div class="bp">
+        <div class="bp-layout">
+          <div class="bp-notes">
+            <span class="mono" style="color:var(--signal)" data-i18n="sys1.k">Caso real · SaaS B2B multi-tenant</span>
+            <h3 data-i18n="sys1.h">Plataforma de automação de marketing.</h3>
+            <p data-i18n="sys1.p"></p>
+            <ol id="sys1-list"></ol>
+          </div>
+          <div class="bp-frame">
+            <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+            <div class="bp-top mono"><span>sys.map / saas</span><span data-i18n="sys.live">● em produção</span></div>
+            <svg class="diagram" data-d="saas" role="img"></svg>
+            <div class="bp-info" data-info="saas"><span class="mono k"></span><p></p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bp">
+        <div class="bp-layout">
+          <div class="bp-notes">
+            <span class="mono" style="color:var(--signal)" data-i18n="sys2.k">Caso real · App com IA multimodal</span>
+            <h3 data-i18n="sys2.h">Uma agenda de eventos que se monta sozinha.</h3>
+            <p data-i18n="sys2.p"></p>
+            <ol id="sys2-list"></ol>
+          </div>
+          <div class="bp-frame">
+            <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+            <div class="bp-top mono"><span>sys.map / events-ai</span><span data-i18n="sys.live">● em produção</span></div>
+            <svg class="diagram" data-d="events" role="img"></svg>
+            <div class="bp-info" data-info="events"><span class="mono k"></span><p></p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="proj.title">Projetos</h2><span class="idx mono">03 / 06</span></div>
+      <div class="projects" id="proj-list"></div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="xp.title">Experiência</h2><span class="idx mono">04 / 06</span></div>
+      <p class="xp-hint mono" data-i18n="xp.hint">Clique em uma experiência para ver o detalhe</p>
+      <div class="xp" id="xp-list"></div>
+    </div>
+  </section>
+
+  <section id="stack" style="padding-bottom:80px">
+    <div class="wrap"><div class="sec-head"><h2 data-i18n="stack.title">Stack</h2><span class="idx mono">+</span></div></div>
+    <div class="marquee"><div class="track" id="m1"></div></div>
+    <div class="marquee out"><div class="track" id="m2"></div></div>
+    <div class="wrap">
+      <div class="skills-table" id="skills"></div>
+      <div class="sec-head" style="margin:96px 0 32px"><h2 data-i18n="edu.title" style="font-size:clamp(30px,4vw,48px)">Formação</h2></div>
+      <div class="edu" id="edu"></div>
+    </div>
+  </section>
+
+  <section id="pergunte">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="ask.title">Pergunte sobre mim</h2><span class="idx mono">05 / 06</span></div>
+      <div class="ask">
+        <div>
+          <p class="ask-lead" data-i18n="ask.lead"></p>
+          <p class="ask-note" data-i18n="ask.note"></p>
+        </div>
+        <div class="term">
+          <div class="term-top mono"><span><i></i>pedro.ai / ask</span><span>v1.0</span></div>
+          <div class="log" id="log" aria-live="polite"></div>
+          <div class="chips" id="chips"></div>
+          <form class="ask-form" id="ask-form" autocomplete="off">
+            <label for="ask-input">Pergunta</label>
+            <input id="ask-input" type="text" maxlength="200" data-i18n-ph="ask.ph" placeholder="Ex.: Você já liderou times?">
+            <button type="submit" data-i18n="ask.send">Perguntar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:28px"><span class="mono" style="color:var(--muted)" data-i18n="contact.k">Próximo passo</span><span class="idx mono">06 / 06</span></div>
+      <h2><span class="ln"><span class="in" data-i18n="contact.l1">Vamos</span></span><span class="ln"><span class="in" data-i18n="contact.l2">construir.</span></span></h2>
+      <div class="links">
+        <a href="mailto:contato.plbatista@gmail.com"><span><span class="k mono">E-mail</span><span class="v">contato.plbatista@gmail.com</span></span><span class="arrow">↗</span></a>
+        <a href="https://wa.me/5512974100093" target="_blank" rel="noopener"><span><span class="k mono" data-i18n="contact.phone">Telefone / WhatsApp</span><span class="v">+55 12 97410-0093</span></span><span class="arrow">↗</span></a>
+        <a href="https://www.linkedin.com/in/contatoplbatista/" target="_blank" rel="noopener"><span><span class="k mono">LinkedIn</span><span class="v">/in/contatoplbatista</span></span><span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap mono"><span>© <span id="year"></span> Pedro Luis Batista</span><span data-i18n="footer">Jacareí · SP · Brasil</span></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="assets/content.js"></script>
+<script src="assets/arch.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
